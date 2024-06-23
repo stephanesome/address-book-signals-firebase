@@ -1,4 +1,5 @@
 export class AddressEntry {
+  public id?: string | null;
   public firstName: string;
   public lastName: string;
   public phone?: string;
@@ -7,6 +8,7 @@ export class AddressEntry {
 
 
   constructor(firstName: string, lastName: string, phone?: string, email?: string, notes?: string) {
+    this.id = null;
     this.firstName = firstName;
     this.lastName = lastName;
     this.phone = phone;

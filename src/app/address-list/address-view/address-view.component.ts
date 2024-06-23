@@ -11,10 +11,9 @@ import {FormsModule} from "@angular/forms";
   styleUrls: ['./address-view.component.css']
 })
 export class AddressViewComponent implements OnInit {
-  // @Input() address!: AddressEntry;
-  // @Output() fireDelete: EventEmitter<AddressEntry> = new EventEmitter();
   address = input.required<AddressEntry>();
   fireDelete = output<AddressEntry>();
+  fireSave = output<AddressEntry>();
   edit: boolean | undefined;
 
   ngOnInit(): void {
@@ -27,5 +26,9 @@ export class AddressViewComponent implements OnInit {
 
   delete(): void {
     this.fireDelete.emit(this.address());
+  }
+
+  save(): void {
+    this.fireSave.emit(this.address());
   }
 }

@@ -2,6 +2,9 @@
   <div class="col-md-12">
     <button class="btn btn-success" (click)="addAddress()">New Address</button>
   </div>
+  <div class="col-md-8" [ngStyle]="msgStyle" [hidden]="hideMsg">
+    {{message}}
+  </div>
 </div>
 <hr>
 <div class="row">
@@ -16,6 +19,7 @@
   <div class="col-md-9">
     <app-address-view *ngIf="currentAddress !== null"
                       [address]="currentAddress"
-                      (fireDelete)='deleteCurrent()'></app-address-view>
+                      (fireDelete)='deleteCurrent()'
+                      (fireSave)='saveCurrent()'></app-address-view>
   </div>
 </div>
