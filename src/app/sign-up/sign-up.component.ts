@@ -11,12 +11,12 @@ function passwordMatcher(pwGrp: AbstractControl): ValidationErrors | null {
 
 @Component({
   selector: 'app-sign-up',
-  standalone: true,
   imports: [
     ReactiveFormsModule,
     RouterLink
   ],
   templateUrl: './sign-up.component.html',
+  standalone: true,
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent {

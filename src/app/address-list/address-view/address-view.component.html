@@ -24,16 +24,20 @@
   </fieldset>
   <div class="btn-toolbar" role="toolbar">
     <button class="btn btn-danger" name="delete" (click)="delete()">Delete</button>
-    <button  (click)="toggleEdit()"
-             class="btn btn-secondary m-auto" *ngIf="edit">
-      Protect
-    </button>
-    <button  (click)="toggleEdit()"
-             class="btn btn-secondary m-auto" *ngIf="!edit">
-      Edit
-    </button>
+    @if (edit) {
+      <button  (click)="toggleEdit()"
+        class="btn btn-secondary m-auto">
+        Protect
+      </button>
+    }
+    @if (!edit) {
+      <button  (click)="toggleEdit()"
+        class="btn btn-secondary m-auto">
+        Edit
+      </button>
+    }
     <button class="btn btn-dark"
-            [hidden]="addressForm.pristine"
-            name="save" (click)="save()">Save</button>
+      [hidden]="addressForm.pristine"
+    name="save" (click)="save()">Save</button>
   </div>
 </form>

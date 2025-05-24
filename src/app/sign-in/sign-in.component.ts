@@ -4,11 +4,11 @@ import {AuthService} from "../authentication/auth.service";
 
 @Component({
   selector: 'app-sign-in',
-  standalone: true,
   imports: [
     RouterLink
   ],
   templateUrl: './sign-in.component.html',
+  standalone: true,
   styleUrl: './sign-in.component.css'
 })
 export class SignInComponent {

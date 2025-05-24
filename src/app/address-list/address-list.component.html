@@ -7,19 +7,24 @@
   </div>
 </div>
 <hr>
-<div class="row">
-  <div class="address-list col-md-3" *ngIf="addresses.length > 0">
-    <app-address-list-element
-      *ngFor="let address of addresses"
-      [address]="address"
-      (click)='select(address)'
-    >
-    </app-address-list-element>
+  <div class="row">
+    @if (addresses.length > 0) {
+      <div class="address-list col-md-3">
+        @for (address of addresses; track $index) {
+          <app-address-list-element
+            [address]="address"
+            (click)='select(address)'
+            >
+          </app-address-list-element>
+        }
+      </div>
+    }
+    <div class="col-md-9">
+      @if (currentAddress !== null) {
+        <app-address-view
+          [address]="currentAddress"
+          (fireDelete)='deleteCurrent()'
+        (fireSave)='saveCurrent()'></app-address-view>
+      }
+    </div>
   </div>
-  <div class="col-md-9">
-    <app-address-view *ngIf="currentAddress !== null"
-                      [address]="currentAddress"
-                      (fireDelete)='deleteCurrent()'
-                      (fireSave)='saveCurrent()'></app-address-view>
-  </div>
-</div>

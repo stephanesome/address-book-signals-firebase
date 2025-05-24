@@ -4,11 +4,11 @@ import {AuthService} from "../authentication/auth.service";
 
 @Component({
   selector: 'app-password-forgot',
-  standalone: true,
   imports: [
     RouterLink
   ],
   templateUrl: './password-forgot.component.html',
+  standalone: true,
   styleUrl: './password-forgot.component.css'
 })
 export class PasswordForgotComponent {

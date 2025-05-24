@@ -5,9 +5,9 @@ import {NotificationService} from "../notification.service";
 
 @Component({
   selector: 'app-address-list-element',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './address-list-element.component.html',
+  standalone: true,
   styleUrls: ['./address-list-element.component.css']
 })
 export class AddressListElementComponent {
